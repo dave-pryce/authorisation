@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+<div class='panel panel-default'>
+  <div class='panel-heding'>
+  <h1>Sign up</h1>
+  </div>
+  <div class='panel-body'>
+     <%= form_for(@user) do |f| %>
+     <%= f.label :first_name %>
+     <%= f.text_field :first_name %>
+     <%= f.label :last_name %>
+     <%= f.text_field :last_name %>
+     <%= f.label :email %>
+     <%= f.email_field :email %>
+     <%= f.label :password %>
+     <%= f.password_field :password %>
+   </div>
+   <div class='panel-footer'>
+     <%= f.submit "Create my account", class: "btn btn-success"%>
+   <% end %>
+ </div>
+ </div>
+</div>
+
+<div class='panel panel-success'>
+  <h1>Sign In</h1>
+</div>
+<div class='panel-body'>
+  <%= form_for(:session, url: login_path) do |f| %>
+  <%= f.email_field :email, :placeholder => "Email" %>
+  <%= f.password_field :password, :placeholder => "Password" %>
+</div>
+<div class='panel-footer'
+  <%= f.submit "Log in", class: "btn btn-success" %>
+<% end %>
+</div>
+
+</div>
+
+
+</div>

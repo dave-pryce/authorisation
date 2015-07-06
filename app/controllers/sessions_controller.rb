@@ -1,9 +1,5 @@
 class SessionsController < ApplicationController
 
-  def show
-    @user = User.find(params[:id])
-  end
-
   def new
   end
 
@@ -13,8 +9,16 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     redirect_to '/'
   else
-    redirect_to 'login'
+    flash[:danger] = 'Invalid email/password combination'
+    render 'new'
   end
 end
+
+def destroy
+  session[:user_id] = nil
+  redirect_to '/'
+end
+
+
 
 end

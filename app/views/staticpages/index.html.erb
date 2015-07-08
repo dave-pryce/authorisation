@@ -4,7 +4,8 @@
 <p>Built following <a href='https://www.railstutorial.org/'>Rails Tutorial by Michael Hartl</a>
   and the <a href='http://www.codecademy.com/'>Codecademy</a> tutorial.</p>
 
-
- <%= link_to "Sign Up", signup_path, :class => "btn btn-default"%>
+<%if current_user == nil%>
+<%= link_to "Sign Up", signup_path, :class => "btn btn-default"%>
 <%= link_to "Sign In", login_path, :class => "btn btn-primary"%>
+<%end%>
 </div>

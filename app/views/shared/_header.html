@@ -8,7 +8,7 @@
         <div class="container-fluid">
           <%if current_user%>
           <p class="navbar-text navbar-right"> Signed in as: <strong>User: <%=current_user.id%> <%=current_user.email%> </strong>
-          <a "navbar-link"><%= link_to "Sign Out", logout_path, method: "delete"%></a></p>
+          <a "navbar-link"><%= link_to "Sign Out", logout_path, method: "delete"%></a></p>      
           <%end%>
         </div>
 

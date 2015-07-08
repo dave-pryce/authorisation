@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
   redirect_to '/login' unless current_user
   end
 
+  def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
+    end
+
 end

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user, only: [:show]
+  before_action :correct_user, only: [:show]
 
   def show
   @user = User.find(params[:id])
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      flash[:success] = "Welcome to the Authentication and Authorisation App!"
       redirect_to @user
     else
       render 'new'

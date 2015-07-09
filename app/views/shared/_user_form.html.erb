@@ -13,8 +13,17 @@
    <br>
    <%= f.password_field :password_confirmation , :placeholder => "Password Confirmation",class: "form-control"%>
    <br>
-   <%= f.submit "Create my account", class: "btn btn-success"%>
+   <%= f.submit "Save", class: "btn btn-success"%>
  <% end %>
-</div>
-</div>
+ </div>
+ </div>
+ </div>
+
+ <%if current_user == nil %>
+ <div class="panel-footer">
+ <p class="text-right">existing user? <%= link_to "Sign In", login_path %></p>
+ </div>
+ <%end%>
+
+
 </div>

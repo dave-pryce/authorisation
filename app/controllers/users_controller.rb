@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user, only: [:show]
-  before_action :correct_user, only: [:show]
+  before_action :correct_user, only: [:show, :edit]
 
   def show
   @user = User.find(params[:id])

@@ -1,0 +1,20 @@
+<div class='panel-body'>
+  <div class="form-group">
+  <div class="col-sm-10">
+   <%= form_for(@user) do |f| %>
+
+   <%= f.text_field :first_name , :placeholder => "First name",  class: "form-control" %>
+   <br>
+   <%= f.text_field :last_name , :placeholder => "Last name", class: "form-control" %>
+   <br>
+   <%= f.email_field :email , :placeholder => "Email", class: "form-control" %>
+  <br>
+   <%= f.password_field :password , :placeholder => "Password", class: "form-control" %>
+   <br>
+   <%= f.password_field :password_confirmation , :placeholder => "Password Confirmation",class: "form-control"%>
+   <br>
+   <%= f.submit "Create my account", class: "btn btn-success"%>
+ <% end %>
+</div>
+</div>
+</div>

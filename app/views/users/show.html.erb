@@ -4,12 +4,15 @@
 <div class='panel panel-default'>
 
   <div class='panel-heading'>
-    <h1>First name:<%= @user.first_name %></h1>
+    <p><%= @user.first_name %> <%= @user.last_name %></p>
   </div>
 
   <div class="panel-body">
-  <p>Last name:<%= @user.last_name %></p>
   <p>email:<%= @user.email%></p>
+  </div>
+
+  <div class="panel-footer">
+    <%= link_to "Edit", edit_user_path(current_user), class: "btn btn-default"%>
   </div>
 
 </div>

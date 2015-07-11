@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
 
   def index
-    @users = User.all
+    @users = User.select("first_name","last_name").all
   end
 
 

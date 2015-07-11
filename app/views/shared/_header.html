@@ -1,17 +1,19 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar narbar-fixed-top navbar-inverse">
   <div class="container-fluid">
+         <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span> Authorisation</a>
 
-        <div class="navbar-header">
-    		  <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span>  Authentication and Authorisation</a>
-        </div>
-
-        <div class="container-fluid">
           <%if current_user%>
-          <p class="navbar-text navbar-right"> Signed in as: <strong><%= link_to current_user.id, user_path(current_user) %> </strong>
-          <a "navbar-link"><%= link_to "Sign Out", logout_path, method: "delete"%></a></p>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown-toggle">
+              <a href='#' class="pull-right" type="button" id="SignedInMenu" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="SignedInMenu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "Profile", user_path(current_user) %></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "All Users", users_path %></a></li>
+                    <li role="separator" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "Sign Out", logout_path, method: "delete"%></a></li>
+                  </ul>
+            </li>
+          </ul>
           <%end%>
-        </div>
-
-
   </div>
 </nav>
